@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="<%= htmlWebpackPlugin.options.lang %>">
+<html lang="<%= lang %>">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>" />
+    <% if(mobile) { %>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <% } %>
   </head>
   <body>
     <div id="app"></div>
