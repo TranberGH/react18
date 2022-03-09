@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-    entry: ["react-hot-loader/patch", "./src/index.tsx"],
+    entry: [/*"react-hot-loader/patch",*/ "./src/index.tsx"],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
@@ -49,7 +49,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Pouet",
+            title: "React app",
             lang: "Fr-fr",
             template: "./template/index.html",
         }),
@@ -58,7 +58,7 @@ const config = {
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
         alias: {
-            "react-dom": "@hot-loader/react-dom",
+            // "react-dom": "@hot-loader/react-dom",
         },
     },
 };
