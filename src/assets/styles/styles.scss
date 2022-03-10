@@ -1,6 +1,25 @@
-$primary-color: white;
-$bg: black;
-h1 {
-  color: $primary-color;
-  background-color: $bg;
+body {
+  font: 1em / 1.5 Corbel, sans-serif;
+  color: #666;
+}
+
+a {
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+div,
+p,
+figcaption,
+figure {
+  margin: 0;
+  padding: 0;
 }
