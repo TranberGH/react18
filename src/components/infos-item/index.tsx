@@ -16,7 +16,6 @@ function InfosItem({ item, even }: InfosItemProps) {
     image: { url, width, height },
   } = item ?? {};
 
-  console.log('item : ', item, even);
   return (
     <article className={`feed-article${even ? ' even-item' : ''}`}>
       <header className="feed-header">

@@ -7,6 +7,8 @@ import { createItem } from '../utils';
 function useFeeds() {
   const [feedsChoices, setFeedsChoices] = useState<{ title: string; url: string }[]>([]);
   const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
+  const [feedTitle, setFeedTitle] = useState(null);
+  const [feedDescription, setFeedDescription] = useState(null);
 
   const handleFeedChoice = useCallback(async (evt) => {
     const select = evt.target as HTMLSelectElement;
@@ -17,9 +19,13 @@ function useFeeds() {
           return resp.json();
         })
         .then((result) => {
-          const allFeedItems = result?.rss?.channel?.item?.map((currentItem: any) => {
+          console.log('result : ', result?.rss?.channel);
+          const { title, description, item } = result?.rss?.channel ?? {};
+          const allFeedItems = item?.map((currentItem: any) => {
             return createItem(currentItem);
           });
+          setFeedTitle(title);
+          setFeedDescription(description);
           setFeedItems(allFeedItems);
         });
     }
@@ -34,7 +40,7 @@ function useFeeds() {
     setFeedsChoices(feedsItems);
   }, []);
 
-  return { feedsChoices, handleFeedChoice, feedItems };
+  return { feedsChoices, handleFeedChoice, feedTitle, feedDescription, feedItems };
 }
 
 export { useFeeds };
