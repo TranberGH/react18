@@ -29,7 +29,6 @@ function useFeeds() {
           setFeedItems(allFeedItems);
         });
     }
-    //
   }, []);
 
   useEffect(() => {
