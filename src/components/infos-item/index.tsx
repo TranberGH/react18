@@ -18,16 +18,16 @@ function InfosItem({ item, even }: InfosItemProps) {
 
   return (
     <article className={`feed-article${even ? ' even-item' : ''}`}>
-      <header className="feed-header">
+      <header className="feed-article-header">
         <h2>
           <a href={link} target="_blank">
             {title}
           </a>
         </h2>
       </header>
-      <div className="feed-content">
+      <div className="feed-article-content">
         {url && (
-          <figure className="feed-image">
+          <figure className="feed-article-image">
             <img src={url} width={width} height={height} alt="" />
           </figure>
         )}

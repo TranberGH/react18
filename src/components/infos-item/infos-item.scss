@@ -10,13 +10,13 @@ $image-margin: 1em;
     clear: both;
   }
 
-  .feed-image {
+  .feed-article-image {
     float: right;
     margin-left: $image-margin;
   }
 
   &.even-item {
-    .feed-image {
+    .feed-article-image {
       float: left;
       margin-right: $image-margin;
       margin-left: 0;
@@ -28,12 +28,12 @@ $image-margin: 1em;
   }
 }
 
-.feed-item-separator {
+.feed-article-separator {
   clear: both;
   margin: 1em 4em;
 }
 
-.feed-image {
+.feed-article-image {
   width: 40%;
   max-width: 20em;
 
@@ -43,6 +43,6 @@ $image-margin: 1em;
   }
 }
 
-.feed-header {
+.feed-article-header {
   margin-bottom: 2em;
 }

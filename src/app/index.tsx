@@ -27,13 +27,15 @@ function App() {
       </header>
 
       <div className="feed-block">
-        {feedTitle && <h2 className="feed-title">{feedTitle}</h2>}
-        {feedDescription && <p className="feed-description">{feedDescription}</p>}
+        <header className="feed-header">
+          {feedTitle && <h2 className="feed-title">{feedTitle}</h2>}
+          {feedDescription && <p className="feed-description">{feedDescription}</p>}
+        </header>
         {feedItems.map((item, itemIndex) => {
           return (
             <>
               <InfosItem item={item} even={itemIndex % 2 === 0} />
-              {itemIndex < feedItems.length - 1 && <hr className="feed-item-separator" />}
+              {itemIndex < feedItems.length - 1 && <hr className="feed-article-separator" />}
             </>
           );
         })}
